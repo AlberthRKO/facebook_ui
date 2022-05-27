@@ -33,6 +33,7 @@ final ThemeData darkMode = ThemeData(
   buttonColor: const Color(0xff2f3643),
   accentColor: const Color(0xffffffff),
   iconTheme: const IconThemeData(color: Color(0xff515765)),
+  primaryIconTheme: const IconThemeData(color: Color(0xff3284f5)),
   dividerColor: const Color(0xff2d3340),
   cardColor: const Color(0xff2e3441),
 );
@@ -43,6 +44,7 @@ final ThemeData lightMode = ThemeData(
   buttonColor: const Color(0xfff9fafb),
   accentColor: const Color(0xff364987),
   iconTheme: const IconThemeData(color: Color(0xffd5dcef)),
+  primaryIconTheme: const IconThemeData(color: Color(0xff3284f5)),
   dividerColor: const Color(0xfff8f8f8),
   cardColor: const Color(0xffffffff),
 );

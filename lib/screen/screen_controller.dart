@@ -1,5 +1,8 @@
+import 'package:facebook_ui/screen/friends_screen.dart';
 import 'package:facebook_ui/screen/home_screen.dart';
 import 'package:facebook_ui/screen/settings_screen.dart';
+import 'package:facebook_ui/screen/shop_screen.dart';
+import 'package:facebook_ui/screen/watch_screen.dart';
 import 'package:facebook_ui/widget/navigator_bars.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -33,11 +36,16 @@ class ScreenController extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: const [
                 HomeScreen(),
+                WatchScreen(),
+                ShoppScreen(),
+                FriendsScreen(),
                 SettingsScreen(),
               ],
             ),
             // Bootom navigation var
-            NavigationBars(selectedIndex: screensState.page),
+            NavigationBars(
+                showBar: bottomBarState.showBottomBar,
+                selectedIndex: screensState.page),
           ],
         ),
       ),

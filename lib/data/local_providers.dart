@@ -22,7 +22,7 @@ class ScreensState with ChangeNotifier {
   // si el valor cambia de 0 se redirecciona a la otra pagina con una animacion
   set page(int page) {
     _page = page;
-    if (_page <= 1) {
+    if (_page >= 0) {
       _pageController.animateToPage(
         _page,
         duration: const Duration(milliseconds: 350),
