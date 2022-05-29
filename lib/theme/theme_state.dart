@@ -31,20 +31,24 @@ final ThemeData darkMode = ThemeData(
   scaffoldBackgroundColor: const Color(0xff070c20),
   backgroundColor: const Color(0xff272d3a),
   buttonColor: const Color(0xff2f3643),
-  accentColor: const Color(0xffffffff),
+  buttonTheme: const ButtonThemeData(buttonColor: Color(0xff2f3643)),
   iconTheme: const IconThemeData(color: Color(0xff515765)),
   primaryIconTheme: const IconThemeData(color: Color(0xff3284f5)),
   dividerColor: const Color(0xff2d3340),
   cardColor: const Color(0xff2e3441),
+  colorScheme:
+      ColorScheme.fromSwatch().copyWith(secondary: const Color(0xffffffff)),
 );
 
 final ThemeData lightMode = ThemeData(
   scaffoldBackgroundColor: const Color(0xfff4f6f8),
   backgroundColor: const Color(0xffffffff),
   buttonColor: const Color(0xfff9fafb),
-  accentColor: const Color(0xff364987),
+  buttonTheme: const ButtonThemeData(buttonColor: Color(0xfff9fafb)),
   iconTheme: const IconThemeData(color: Color(0xffd5dcef)),
   primaryIconTheme: const IconThemeData(color: Color(0xff3284f5)),
   dividerColor: const Color(0xfff8f8f8),
   cardColor: const Color(0xffffffff),
+  colorScheme:
+      ColorScheme.fromSwatch().copyWith(secondary: const Color(0xff364987)),
 );

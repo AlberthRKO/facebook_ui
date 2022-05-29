@@ -1,5 +1,6 @@
 import 'package:facebook_ui/data/local_providers.dart';
 import 'package:facebook_ui/utils/responsive.dart';
+import 'package:facebook_ui/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -42,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final responsive = Responsive.of(context);
     return Scaffold(
+      backgroundColor: Colors.amber,
       // evitamos el cambio de tamaño
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -56,11 +58,23 @@ class _HomeScreenState extends State<HomeScreen> {
               physics: const BouncingScrollPhysics(),
               controller: _scrollController,
               slivers: [
+                // definimos el appbar o heading del home
                 SliverPersistentHeader(
-                  pinned: true,
                   floating: true,
-                  delegate: ,
+                  // boleano pa definir si se ejecutaran los valores min y max height
+                  pinned: true,
+                  delegate: CustomSliverHeader(
+                    maxHeight: responsive.heightPercent(25),
+                    minHeight: responsive.heightPercent(11),
+                    child: const CustomAppbar(),
+                  ),
                 ),
+                SliverToBoxAdapter(
+                  child: Container(
+                    height: 800,
+                    color: Colors.blue,
+                  ),
+                )
               ],
             ),
           ),
@@ -70,34 +84,35 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class CustomSliverHeader extends SliverPersistentHeaderDelegate{
-
+class CustomSliverHeader extends SliverPersistentHeaderDelegate {
   CustomSliverHeader({
     required this.maxHeight,
-    required this.minheight,
+    required this.minHeight,
     required this.child,
-  }): assert(maxHeight>minheight);
+  }) : assert(maxHeight > minHeight);
   // Damos los tamaños minimo y maximos
   final double maxHeight;
-  final double minheight;
+  final double minHeight;
   final Widget child;
+
+  // Aqui es donde se contruira el widget
 
   @override
   Widget build(context, double shrinkOffset, bool overlapsContent) =>
-    SizedBox.expand(child: child);
-  
+      SizedBox.expand(child: child);
 
+  // definimo la altura maxima del contenedor del widget
   @override
   double get maxExtent => maxHeight;
 
+  // definimos la altura minima
   @override
-  double get minExtent => minheight;
+  double get minExtent => minHeight;
 
+  // Reconstruimos la ui cuando las medidas cambien
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
-    // TODO: implement shouldRebuild
-    throw UnimplementedError();
-  }
-
-  
-} 
+  bool shouldRebuild(covariant CustomSliverHeader oldDelegate) =>
+      maxHeight != oldDelegate.maxHeight ||
+      minHeight != oldDelegate.minHeight ||
+      child != oldDelegate.child;
+}
