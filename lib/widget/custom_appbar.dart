@@ -30,27 +30,30 @@ class CustomAppbar extends StatelessWidget {
         bottom: false,
         child: Stack(
           children: [
-            const _Appbar(
-              perfil: perfil,
-            ),
             Positioned(
               left: 0,
               right: 0,
-              bottom: responsive.widthPercent(5),
+              bottom: responsive.widthPercent(4),
               child: Column(
                 children: [
                   const Divider(
                     thickness: 2,
                   ),
                   SizedBox(
-                    height: responsive.heightPercent(1),
+                    height: responsive.heightPercent(1.5),
                   ),
-                  const _SearchBar(perfil: perfil),
+                  const SearchBar(perfil: perfil),
                   SizedBox(
-                    height: responsive.heightPercent(1),
+                    height: responsive.heightPercent(2),
                   ),
-                  _PostAction()
+                  const PostAction(),
                 ],
+              ),
+            ),
+            Container(
+              color: Theme.of(context).backgroundColor,
+              child: const Appbar(
+                perfil: perfil,
               ),
             ),
           ],
@@ -60,8 +63,8 @@ class CustomAppbar extends StatelessWidget {
   }
 }
 
-class _PostAction extends StatelessWidget {
-  const _PostAction({
+class PostAction extends StatelessWidget {
+  const PostAction({
     Key? key,
   }) : super(key: key);
 
@@ -129,8 +132,8 @@ class _PostAction extends StatelessWidget {
   }
 }
 
-class _SearchBar extends StatelessWidget {
-  const _SearchBar({
+class SearchBar extends StatelessWidget {
+  const SearchBar({
     Key? key,
     required this.perfil,
   }) : super(key: key);
@@ -203,8 +206,8 @@ class _SearchBar extends StatelessWidget {
 }
 
 // Widget para el appbar
-class _Appbar extends StatelessWidget {
-  const _Appbar({
+class Appbar extends StatelessWidget {
+  const Appbar({
     Key? key,
     required this.perfil,
   }) : super(key: key);
@@ -220,7 +223,7 @@ class _Appbar extends StatelessWidget {
     final themeState = Provider.of<ThemeState>(context);
 
     return Padding(
-      padding: EdgeInsets.only(top: responsive.heightPercent(1.5)),
+      padding: EdgeInsets.only(top: responsive.heightPercent(1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,6 +1,9 @@
 import 'package:facebook_ui/data/local_providers.dart';
+import 'package:facebook_ui/data/post.dart';
 import 'package:facebook_ui/utils/responsive.dart';
 import 'package:facebook_ui/widget/custom_appbar.dart';
+import 'package:facebook_ui/widget/custom_post.dart';
+import 'package:facebook_ui/widget/custom_stories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final responsive = Responsive.of(context);
     return Scaffold(
-      backgroundColor: Colors.amber,
+      // backgroundColor: Colors.black,
       // evitamos el cambio de tamaño
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -64,17 +67,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   // boleano pa definir si se ejecutaran los valores min y max height
                   pinned: true,
                   delegate: CustomSliverHeader(
-                    maxHeight: responsive.heightPercent(25),
-                    minHeight: responsive.heightPercent(11),
+                    maxHeight: responsive.heightPercent(24),
+                    minHeight: responsive.heightPercent(10),
                     child: const CustomAppbar(),
                   ),
                 ),
-                SliverToBoxAdapter(
-                  child: Container(
-                    height: 800,
-                    color: Colors.blue,
+                const SliverToBoxAdapter(
+                  child: CustomStories(),
+                ),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (_, index) => CustomPost(
+                      post: posts[index],
+                    ),
+                    childCount: posts.length,
                   ),
-                )
+                ),
               ],
             ),
           ),

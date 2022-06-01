@@ -12,38 +12,38 @@ class Storie {
 
 List<Storie> stories = List.of({
   const Storie(
-    previewStory: 'assets/common/images/profile_image.jpg',
+    previewStory: 'assets/common/perfil/profile.jpg',
     userImage: 'none',
     userName: 'Crear historia',
   ),
   const Storie(
-    previewStory: 'assets/facebook_ui/images/people/mao_lop.png',
-    userImage: 'assets/facebook_ui/images/people/mao_lop.png',
+    previewStory: 'assets/images/people/mao_lop.png',
+    userImage: 'assets/images/people/mao_lop.png',
     userName: 'Mao',
   ),
   const Storie(
-    previewStory: 'assets/facebook_ui/images/stories/fernanda_preview.png',
-    userImage: 'assets/facebook_ui/images/people/fernanda.png',
+    previewStory: 'assets/images/stories/fernanda_preview.png',
+    userImage: 'assets/images/people/fernanda.png',
     userName: 'Fernanda',
   ),
   const Storie(
-    previewStory: 'assets/facebook_ui/images/stories/james_preview.png',
-    userImage: 'assets/facebook_ui/images/people/james.png',
+    previewStory: 'assets/images/stories/james_preview.png',
+    userImage: 'assets/images/people/james.png',
     userName: 'James',
   ),
   const Storie(
-    previewStory: 'assets/facebook_ui/images/stories/samanta_preview.png',
-    userImage: 'assets/facebook_ui/images/people/samanta_smith.jpeg',
+    previewStory: 'assets/images/stories/samanta_preview.png',
+    userImage: 'assets/images/people/samanta_smith.jpeg',
     userName: 'Samanta',
   ),
   const Storie(
-    previewStory: 'assets/facebook_ui/images/stories/marcus_preview.png',
-    userImage: 'assets/facebook_ui/images/people/marcus_dail.jpeg',
+    previewStory: 'assets/images/stories/marcus_preview.png',
+    userImage: 'assets/images/people/marcus_dail.jpeg',
     userName: 'Marcus',
   ),
   const Storie(
-    previewStory: 'assets/facebook_ui/images/stories/cloe_preview.png',
-    userImage: 'assets/facebook_ui/images/people/cloe_thompson.jpeg',
+    previewStory: 'assets/images/stories/cloe_preview.png',
+    userImage: 'assets/images/people/cloe_thompson.jpeg',
     userName: 'Cloe',
   ),
 });
