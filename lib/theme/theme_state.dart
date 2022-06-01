@@ -28,27 +28,43 @@ class ThemeState with ChangeNotifier {
 }
 
 final ThemeData darkMode = ThemeData(
-  scaffoldBackgroundColor: const Color(0xff070c20),
-  backgroundColor: const Color(0xff272d3a),
-  buttonColor: const Color(0xff2f3643),
+  textTheme: const TextTheme(
+    bodyText2: TextStyle(color: Color(0xffffffff)),
+  ),
+  scaffoldBackgroundColor: const Color(0xff080E1D),
+  backgroundColor: const Color(0xff232935),
+  shadowColor: const Color(0xff292F3B),
+  // buttonColor: const Color(0xff292F3B),
   buttonTheme: const ButtonThemeData(buttonColor: Color(0xff2f3643)),
   iconTheme: const IconThemeData(color: Color(0xff515765)),
   primaryIconTheme: const IconThemeData(color: Color(0xff3284f5)),
   dividerColor: const Color(0xff2d3340),
-  cardColor: const Color(0xff2e3441),
-  colorScheme:
-      ColorScheme.fromSwatch().copyWith(secondary: const Color(0xffffffff)),
+  highlightColor: const Color(0xff1C2027),
+  // color del texto
+  hintColor: const Color(0xff747EA0),
+  cardColor: const Color(0xff222833),
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    secondary: const Color(0xffffffff),
+  ),
 );
 
 final ThemeData lightMode = ThemeData(
+  textTheme: const TextTheme(
+    bodyText2: TextStyle(color: Color(0xff747EA0)),
+  ),
   scaffoldBackgroundColor: const Color(0xfff4f6f8),
   backgroundColor: const Color(0xffffffff),
-  buttonColor: const Color(0xfff9fafb),
+  // Color de fondo de los botones
+  shadowColor: const Color(0xffF8F9FA),
+  // buttonColor: const Color(0xffF8F9FA),
   buttonTheme: const ButtonThemeData(buttonColor: Color(0xfff9fafb)),
   iconTheme: const IconThemeData(color: Color(0xffd5dcef)),
   primaryIconTheme: const IconThemeData(color: Color(0xff3284f5)),
   dividerColor: const Color(0xfff8f8f8),
+  highlightColor: const Color(0xffEFF2F7),
+  hintColor: const Color(0xff747EA0),
   cardColor: const Color(0xffffffff),
   colorScheme:
       ColorScheme.fromSwatch().copyWith(secondary: const Color(0xff364987)),
 );
+// #444D6E post

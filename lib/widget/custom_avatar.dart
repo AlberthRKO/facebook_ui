@@ -22,14 +22,15 @@ class CustomAvatar extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(perfil),
-          ),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: borderColor,
-            width: border,
-          )),
+        image: DecorationImage(
+          image: AssetImage(perfil),
+        ),
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: borderColor,
+          width: border,
+        ),
+      ),
       child: child,
     );
   }

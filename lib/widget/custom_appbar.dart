@@ -218,7 +218,7 @@ class Appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     final responsive = Responsive.of(context);
     final colorIcon = Theme.of(context).colorScheme.secondary;
-    final bgIcon = Theme.of(context).buttonColor;
+    final bgIcon = Theme.of(context).shadowColor;
 
     final themeState = Provider.of<ThemeState>(context);
 
@@ -234,7 +234,7 @@ class Appbar extends StatelessWidget {
               fit: BoxFit.none,
               child: FaIcon(
                 FontAwesomeIcons.facebook,
-                size: responsive.widthPercent(8.5),
+                size: responsive.widthPercent(9),
                 color: const Color(0xff3284f5),
                 textDirection: TextDirection.ltr,
               ),
@@ -323,6 +323,8 @@ class Appbar extends StatelessWidget {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
+                          highlightColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(50),
                           onTap: () {},
                           child: const SizedBox(),
                         ),

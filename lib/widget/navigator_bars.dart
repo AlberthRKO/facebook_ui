@@ -114,7 +114,9 @@ class NavigationBars extends StatelessWidget {
               ],
             ),
             CircleButton(
-              callback: () => screenState.page = 3,
+              callback: () => themeState.isDarkTheme
+                  ? themeState.isDarkTheme = false
+                  : themeState.isDarkTheme = true,
               icon: SvgPicture.asset(
                 assetIcon + 'friends_icon.svg',
                 color: selectedIndex == 3

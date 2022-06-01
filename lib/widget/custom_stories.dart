@@ -1,7 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:facebook_ui/theme/theme_state.dart';
 import 'package:facebook_ui/utils/responsive.dart';
-import 'package:facebook_ui/widget/custom_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +16,7 @@ class CustomStories extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: responsive.widthPercent(4)),
       child: Container(
-        height: responsive.widthPercent(30),
+        height: responsive.widthPercent(27),
         decoration: const BoxDecoration(
           // color: Colors.blue,
           borderRadius: BorderRadius.vertical(
@@ -61,8 +60,9 @@ class StorieWidget extends StatelessWidget {
         children: [
           Container(
             width: responsive.widthPercent(19),
-            height: responsive.widthPercent(23),
+            height: responsive.widthPercent(19),
             decoration: BoxDecoration(
+              // color: Colors.red,
               borderRadius: BorderRadius.circular(responsive.widthPercent(5)),
               image: DecorationImage(
                 image: AssetImage(imageStory),
@@ -72,6 +72,7 @@ class StorieWidget extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
+                highlightColor: Colors.transparent,
                 borderRadius: BorderRadius.circular(responsive.widthPercent(4)),
                 onTap: () => debugPrint(username),
                 child: const SizedBox(),
@@ -79,7 +80,7 @@ class StorieWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: responsive.widthPercent(19),
+            top: responsive.widthPercent(16),
             child: SizedBox(
               // color: Colors.yellow,
               child: Column(
@@ -119,7 +120,7 @@ class StorieWidget extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       color: (themeState.isDarkTheme)
                           ? const Color(0xffd4d5d8)
-                          : const Color(0xff747c96),
+                          : const Color(0xff747EA0),
                     ),
                     textAlign: TextAlign.center,
                   ),

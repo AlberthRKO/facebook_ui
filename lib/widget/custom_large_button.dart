@@ -30,7 +30,7 @@ class CustomLargeButton extends StatelessWidget {
           elevation: MaterialStateProperty.all<double>(0.0),
           // forma de cambiar color a los botones
           backgroundColor:
-              MaterialStateProperty.all<Color>(Theme.of(context).buttonColor),
+              MaterialStateProperty.all<Color>(Theme.of(context).shadowColor),
           overlayColor:
               MaterialStateProperty.all<Color>(Theme.of(context).splashColor),
         ),

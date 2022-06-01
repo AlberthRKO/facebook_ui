@@ -46,7 +46,7 @@ List<Post> posts = List.of({
     comments: 30,
     shared: 5,
     reactions: 50,
-    principalUserReaction: 'Mao Lop',
+    principalUserReaction: 'Alberth',
     comment: Comment(
       userProfileIcon: 'assets/images/people/michael_bruno.png',
       userName: 'Michael Bruno',
